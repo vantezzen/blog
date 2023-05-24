@@ -1,13 +1,13 @@
-import Link from 'next/link'
-import { useConfig } from '@/lib/config'
-import FormattedDate from '@/components/FormattedDate'
+import Link from "next/link";
+import { useConfig } from "@/lib/config";
+import FormattedDate from "@/components/FormattedDate";
 
 const BlogPost = ({ post }) => {
-  const BLOG = useConfig()
+  const BLOG = useConfig();
 
   return (
     <Link href={`${BLOG.path}/${post.slug}`}>
-      <article key={post.id} className="mb-6 md:mb-8">
+      <article key={post.id} className="mb-12 md:mb-16">
         <header className="flex flex-col justify-between md:flex-row md:items-baseline">
           <h2 className="text-lg md:text-xl font-medium mb-2 cursor-pointer text-black dark:text-gray-100">
             {post.title}
@@ -23,7 +23,7 @@ const BlogPost = ({ post }) => {
         </main>
       </article>
     </Link>
-  )
-}
+  );
+};
 
-export default BlogPost
+export default BlogPost;
